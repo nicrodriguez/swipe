@@ -19,6 +19,7 @@ class Ball extends Component {
     }
 }
 
+
 const styles = {
   ball: {
       height: 60,
