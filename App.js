@@ -16,12 +16,16 @@ const DATA = [
 ];
 
 export default class App extends React.Component {
+    onSwipeRight() {return 'face'}
+    onSwipeLeft() {return 'book'}
     renderCard(item) {
         return (
             <Card
                 key={item.id}
                 title={item.text}
                 image={{ uri: item.uri }}
+                onSwipeRight={() => {}}
+                onSwipeLeft={() => {}}
             >
                 <Text style={{ marginBottom: 10 }}>
                     I can customize the Card further
@@ -30,7 +34,7 @@ export default class App extends React.Component {
                     icon={{ name: 'code' }}
                     backgroundColor="#03A9F4"
                     title="View Now!"
-                /> 
+                />
             </Card>
         );
     }

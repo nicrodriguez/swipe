@@ -34,7 +34,7 @@ class Deck extends Component {
     }
 
     forceSwipe(direction) {
-        const x = direction === 'right' ? SCREEN_WIDTH : -SCREEN_WIDTH;
+        const x = direction === 'right' ? SCREEN_WIDTH*1.2 : -SCREEN_WIDTH*1.2;
         Animated.timing(this.state.position, {
             toValue: { x, y: 0 },
             duration: SWIPE_OUT_DURATION
@@ -44,8 +44,8 @@ class Deck extends Component {
     onSwipeComplete(direction) {
         const { onSwipeLeft, onSwipeRight } = this.props;
 
-        direction === 'right' ? onSwipeRight() : onSwipeLeft();
-        
+        direction === 'right' ? onSwipeRight : onSwipeLeft;
+
     }
 
     resetPosition() {
